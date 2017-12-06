@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" >
-<head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale-1" />
 
-    <title>Bullhorn Login</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
+<head th:replace="base :: bootstrap">
 </head>
+
+<br />
+<br />
+<br />
+<br />
+
 
 
 <body>
+
+
+<nav th:replace="base :: navbar">
+</nav>
+
+
+
 <div th:if="${param.error}">
     Invalid username and password.
 </div>
@@ -24,6 +31,8 @@
     <div><label> Password: <input type="password" name="password" /></label></div>
     <div><input type="submit" value="Sign In"/> </div>
 </form>
+
+
 
 </body>
 </html>
