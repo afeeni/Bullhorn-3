@@ -7,11 +7,15 @@
 <nav th:replace="base :: navbar">
 </nav>
 
-<body>
+<body background="https://i.imgur.com/Nbi7bYI.jpg">
+
+<div th:replace="base :: welcome">
+</div>
 
 <br />
 <br />
 
+<div class="col-md-4 col-md-offset-4 container jumbotron vertical-center text-center">
 <form action="#"
       th:action="@{/process}"
       th:object="${message}"
@@ -39,6 +43,18 @@
     <br />
     <input type="submit"  value="Send" />
 </form>
+
+</div>
+<br/>
+<br/>
+
+
+<nav th:replace="base :: footer">
+</nav>
+
+<br/>
+<br/>
+
 
 </body>
 </html>

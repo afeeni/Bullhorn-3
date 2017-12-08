@@ -2,9 +2,10 @@
 <html lang="en" xmlns:th="www.thymeleaf.org">
 
 <head th:replace="base :: bootstrap">
+    <link type="text/css" href="../Static/css/Style.css" th:href="@{css/Style.css}" rel="stylesheet" media="screen"/>
 </head>
 
-<body>
+<body background="https://i.imgur.com/Nbi7bYI.jpg">
 
 <nav th:replace="base :: navbar">
 </nav>
@@ -12,35 +13,61 @@
 <br />
 <br />
 
+<div th:replace="base :: welcome">
+</div>
 
-<a href="/add">Send a Message</a> <br />
+<br />
+
+
+<div class="jumbotron-fluid container jumbotron vertical-center text-center horizontal-center">
+
+<a href="/add" align="center">Send a Message</a> <br />
 
 <br />
 <br />
 
 
-<table>
-    <tr>
-        <th>User</th>
-        <th>Message</th>
-        <th>Date</th>
-        <th>Actions</th>
+<table style="color: #f6d6da">
+
+
+
+    <tr align="center">
+        <th style="color: #122b40; text-align: center; padding:0 50px 0 50px !important;">User</th>
+
+        <th style="color: #122b40; text-align: center; padding:0 50px 0 50px !important;">Message</th>
+
+        <th style="color: #122b40; text-align: center; padding:0 50px 0 50px !important;">Date</th>
+
+        <th style="color: #122b40; text-align: center; padding:0 50px 0 50px !important;">Actions</th>
 
     </tr>
-    <tr th:each="message : ${messages}">
-        <td th:text="${message.user}"></td>
-        <td th:text="${message.description}"></td>
-        <td th:text="${message.date}"></td>
+    <tr align="center" style="color: #122b40; text-align: center; padding:0 50px 0 50px !important;" th:each="message : ${messages}">
+
+        <td align="center" style="color: #122b40; text-align: center; padding:0 50px 0 50px !important;" th:text="${message.user}"></td>
+
+        <td align="center" style="color: #122b40; text-align: center; padding:0 50px 0 50px !important;" th:text="${message.description}"></td>
+
+        <td align="center" style="color: #122b40; text-align: center; padding:0 50px 0 50px !important;" th:text="${message.date}"></td>
+
 
         <td>
-            <a th:href="@{/update/{id}(id=${message.id})}">Update</a> -
-            <a th:href="@{/detail/{id}(id=${message.id})}">Details</a> -
+            <a th:href="@{/update/{id}(id=${message.id})}">Update - </a>
+            <a th:href="@{/detail/{id}(id=${message.id})}">Details - </a>
             <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
         </td>
     </tr>
 
 </table>
+</div>
+<br/>
+<br/>
 
+
+<nav th:replace="base :: footer">
+</nav>
+
+<br/>
+<br/>
 
 </body>
 </html>

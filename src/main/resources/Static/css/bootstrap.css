@@ -52,6 +52,11 @@ a:hover {
 abbr[title] {
   border-bottom: 1px dotted;
 }
+.myJumbotron {
+  background-color: #f6d6da !important;
+  color: #223e4b !important;
+  padding: 10px;
+}
 b,
 strong {
   font-weight: bold;
